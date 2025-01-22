@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  padding: 20px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+
+.firstContainer,
+.secondContainer {
+  width: 600px;
+  height: 700px;
+}
+
+.constructor,
+.result {
+  padding: 10px;
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.boxWindow {
+  display: flex;
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+  select {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+  }
+  button {
+    width: 200px;
+    height: 35px;
+    border-radius: 12px;
+    background-color: rgb(3, 88, 3);
+    cursor: pointer;
+  }
+  .Input {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+  }
+}
+
+.createdDivStyle {
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.createdDivStyle:hover{
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.createdBoxH1Style {
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+  h1{
+    text-align: center;
+  }
+}
+.createdBoxH1Style:hover{
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.createdBOxINPUTStyle{
+  cursor: pointer;
+  max-width: 350px;
+  width: 100%;
+  height: 60px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 300ms ease-in-out;
+
+}
+.createdBOxINPUTStyle:hover {
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.createdBoxSPANStyle{
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+  span{
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+.createdBoxSPANStyle:hover{
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.createtedBoxParagraphStyle{
+  padding: 10px;
+  max-width: 400px;
+  width: 100%;
+  min-height: 100px;
+  cursor: pointer;
+  p{
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+.createtedBoxParagraphStyle:hover{
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.selectedItem{
+  border: 4px solid orange;
+  border-radius: 8px;
+}

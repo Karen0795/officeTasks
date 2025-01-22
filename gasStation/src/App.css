@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background: #1488CC;
+  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+  background: linear-gradient(to right, #2B32B2, #1488CC);
+}
+
+.App {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.submitInputValue {
+  width: 350px;
+  height: 40px;
+  margin: 30px;
+  text-align: center;
+  background: none;
+  border: 1px solid #353535;
+  outline: none;
+  padding: 11px 23px;
+  font-size: 16px;
+  border-radius: 50px;
+  color: white;
+  box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
+    rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.submitButton {
+  width: 150px;
+  height: 40px;
+  margin: 30px;
+  text-align: center;
+  background: none;
+  border: 1px solid #353535;
+  outline: none;
+  padding: 11px 23px;
+  font-size: 16px;
+  border-radius: 50px;
+  color: white;
+  box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
+    rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
