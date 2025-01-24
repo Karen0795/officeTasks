@@ -10,7 +10,6 @@ const stationSlice = createSlice({
     setStationGateCount(state, { payload}) { 
       state.strArr.push(payload)      
     }
-  
     }
   },
 );

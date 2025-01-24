@@ -1,32 +1,46 @@
 import "./App.css";
+import Result from "./components/Result/Result";
 import StationGate from "./components/StationGate/StationGate";
-import {selectStation, setStationGateCount} from "./store/slices/stationSlice";
+import {
+	selectStation,
+	setStationGateCount,
+} from "./store/slices/stationSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 function App() {
 	const { strArr } = useSelector(selectStation);
 	const dispatch = useDispatch();
-	
-	
-	let remainder = 0;
 
 	const handlerCalculated = () => {
-		strArr.map((el, index) => {
-			const newResult = { ...el, availableGalons: el.availableGalons + remainder }
-			console.log(newResult);
-			// el.availableGalons = (el.availableGalons + remainder)
-				if (el.availableGalons == 0) {
-					console.log('end');
-				} else if (el.availableGalons < el.requiredGalonsTillNextStation) {
-					console.log(`element number ${index+1} not equal`);
-				} else { 
-					remainder = remainder + (el.availableGalons-el.requiredGalonsTillNextStation)
-				}
-		});
-		if (remainder >= 0) {
-			console.log("hi");
+		let currentRemainder = 0;
+		let startIndex = 0;
+		for (let i = 0; i < strArr.length; i++) {
+			if (currentRemainder < 0) {
+				currentRemainder = 0;
+				startIndex = i + 1;
+			}
+			const newResult = {
+				...strArr[i],
+				availableGalons: strArr[i].availableGalons + currentRemainder,
+			};
+			currentRemainder =
+				newResult.availableGalons - newResult.requiredGalonsTillNextStation;
 		}
-		else console.log("There is no option");
+		if (startIndex) {
+			for (let i = 0; i < startIndex - 1; i++) {
+				const newResult = {
+					...strArr[i],
+					availableGalons: strArr[i].availableGalons + currentRemainder,
+				};
+				currentRemainder =
+					newResult.availableGalons - newResult.requiredGalonsTillNextStation;
+			}
+		}
+		if (currentRemainder < 0) {
+			return "Immposible";
+		} else {
+			return startIndex == 0 ? startIndex + 1 : startIndex;
+		}
 	};
 
 	const handlerSubmit = (e) => {
@@ -45,8 +59,9 @@ function App() {
 			);
 		}
 		e.target.reset();
+		handlerCalculated();
 	};
-	handlerCalculated();
+	console.log(handlerCalculated());
 
 	return (
 		<div className="App">
@@ -65,10 +80,10 @@ function App() {
 					}}
 					className="submitInputValue"
 					type="text"
+					placeholder="Enter Gas Station count"
 				/>
 				<button className="submitButton">Select</button>
 			</form>
-
 			<div className="stationBox">
 				{strArr.map((el, index) => {
 					return (
@@ -76,6 +91,7 @@ function App() {
 					);
 				})}
 			</div>
+			<Result resultOfCalculating={handlerCalculated()} />
 		</div>
 	);
 }

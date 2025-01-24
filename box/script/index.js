@@ -12,7 +12,6 @@ const selectedArr = []
 const handlerChangeActiveStatus = (e)=>{
   selectedArr.push(e)    
 }
-
 const handlerSubmit = (e) => {
   e.preventDefault();
   const [,input] = e.target;  
