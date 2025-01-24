@@ -1,5 +1,4 @@
 import "./App.css";
-import Result from "./components/Result/Result";
 import StationGate from "./components/StationGate/StationGate";
 import {
 	selectStation,
@@ -7,10 +6,11 @@ import {
 } from "./store/slices/stationSlice";
 import { useSelector, useDispatch } from "react-redux";
 
+let status = false;
+
 function App() {
 	const { strArr } = useSelector(selectStation);
 	const dispatch = useDispatch();
-
 	const handlerCalculated = () => {
 		let currentRemainder = 0;
 		let startIndex = 0;
@@ -37,12 +37,11 @@ function App() {
 			}
 		}
 		if (currentRemainder < 0) {
-			return "Immposible";
+			return "There is no equal staion"; 
 		} else {
 			return startIndex == 0 ? startIndex + 1 : startIndex;
 		}
 	};
-
 	const handlerSubmit = (e) => {
 		e.preventDefault();
 		const [input] = e.target;
@@ -60,9 +59,8 @@ function App() {
 		}
 		e.target.reset();
 		handlerCalculated();
+		status = true;
 	};
-	console.log(handlerCalculated());
-
 	return (
 		<div className="App">
 			<h1> Welcome to Gas Station</h1>
@@ -91,7 +89,7 @@ function App() {
 					);
 				})}
 			</div>
-			<Result resultOfCalculating={handlerCalculated()} />
+			{status && <p className="Answer"> Answer is : {handlerCalculated()}</p>}
 		</div>
 	);
 }
