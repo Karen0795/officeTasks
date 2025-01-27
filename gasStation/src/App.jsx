@@ -11,7 +11,7 @@ let status = false;
 function App() {
 	const { strArr } = useSelector(selectStation);
 	const dispatch = useDispatch();
-	const handlerCalculated = () => {
+	const handlerCalculated = ()=> {
 		let currentRemainder = 0;
 		let startIndex = 0;
 		for (let i = 0; i < strArr.length; i++) {
